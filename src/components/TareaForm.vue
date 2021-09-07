@@ -1,6 +1,11 @@
 <template>
-  formulario
-  <button class="btn btn-primary">Agregar</button>
+  <form action="">
+      <input type="text"
+      placeholder="Ingrese Tarea"
+      class="form-control my-2"
+      >
+  <button class="btn btn-primary w-100">Agregar</button>
+  </form>
 </template>
 
 <script>
