@@ -5,14 +5,15 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity'
+import {ref } from '@vue/reactivity'
 import TareaForm from './TareaForm.vue'
+import { provide } from '@vue/runtime-core'
 export default {
   components: { TareaForm },
 setup(){
     const tareas = ref([])
 
-    provide ('tareas', tareas)
+   provide('tareas', tareas)
 
     return {tareas}
 }

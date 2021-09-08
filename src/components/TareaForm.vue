@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import {inject, ref} from 'vue'
+import {ref} from '@vue/reactivity'
+import { inject } from '@vue/runtime-core'
 export default {
   setup(){
 
@@ -23,8 +24,8 @@ export default {
       }
       const tarea = {
           texto: texto.value,
-          estado:false,
-          id:Date.now()
+          estado: false,
+          id: Date.now()
       }
       tareas.value.push(tarea)
       texto.value = ''
