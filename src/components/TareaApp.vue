@@ -12,6 +12,8 @@ export default {
 setup(){
     const tareas = ref([])
 
+    provide ('tareas', tareas)
+
     return {tareas}
 }
 }
