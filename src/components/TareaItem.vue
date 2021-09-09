@@ -4,10 +4,12 @@
     <div>
 <i class="fas fa-undo-alt mx-2 text-success" role="button"
       @click="modificar(tarea.id)"
+      v-if="tarea.estado"
       ></i>
 
       <i class="fas fa-check-circle mx-2 text-success" role="button"
       @click="modificar(tarea.id)"
+      v-else
       ></i>
       <i class="fas fa-minus-circle text-danger"
       @click="eliminar(tarea.id)"
