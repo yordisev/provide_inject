@@ -15,7 +15,7 @@
 <script>
 import {ref } from '@vue/reactivity'
 import TareaForm from './TareaForm.vue'
-import { provide } from '@vue/runtime-core'
+import { provide, watchEffect } from '@vue/runtime-core'
 import TareaItem from './TareaItem.vue'
 export default {
   components: { TareaForm, TareaItem },
@@ -23,7 +23,13 @@ setup(){
     const tareas = ref([])
 
    provide('tareas', tareas)
-
+   
+  if(localStorage.getItem('tareas')){
+    tareas.value = JSON.parse(localStorage.getItem('tareas'))
+  }
+  watchEffect(() => {
+    localStorage.setItem('tareas', JSON.stringify(tareas.value))
+  })
     return {tareas}
 }
 }
